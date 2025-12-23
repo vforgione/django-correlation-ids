@@ -1,0 +1,57 @@
+[project]
+name = "django-correlation-ids"
+version = "0.1.0"
+description = "Add Correlation IDs to Django Requests and Responses"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "uuid-utils>=0.11.1; python_version < '3.14'",
+]
+
+[dependency-groups]
+dev = [
+    "django>=5.2.8",
+    "pytest>=9.0.1",
+    "pytest-cov>=7.0.0",
+    "pytest-django>=4.11.1",
+]
+
+[build-system]
+requires = ["uv_build>=0.9.13,<0.10.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+indent-width = 4
+
+[tool.ruff.format]
+quote-style = "double"
+skip-magic-trailing-comma = false
+
+[tool.ruff.lint]
+unfixable = [
+    "F401",
+]
+
+[tool.ruff.isort]
+order-by-type = true
+lines-after-imports = -1
+
+[tool.pyright]
+pythonVersion = "3.13"
+typeCheckingMode = "basic"
+enableTypeIgnoreComments = false
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "tests.settings"
+addopts = [
+    "--cov=django_correlation_ids",
+    "--cov-report=term-missing",
+]
+
+[tool.coverage.run]
+omit = [
+    "**/apps.py",
+    "**/checks.py",
+]
