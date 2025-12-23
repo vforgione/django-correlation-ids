@@ -5,12 +5,12 @@ description = "Add Correlation IDs to Django Requests and Responses"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "django>=5.2.8",
     "uuid-utils>=0.11.1; python_version < '3.14'",
 ]
 
 [dependency-groups]
 dev = [
-    "django>=5.2.8",
     "pytest>=9.0.1",
     "pytest-cov>=7.0.0",
     "pytest-django>=4.11.1",
