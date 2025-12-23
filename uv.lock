@@ -100,23 +100,25 @@ name = "django-correlation-ids"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "django" },
     { name = "uuid-utils", marker = "python_full_version < '3.14'" },
 ]
 
 [package.dev-dependencies]
 dev = [
-    { name = "django" },
     { name = "pytest" },
     { name = "pytest-cov" },
     { name = "pytest-django" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "uuid-utils", marker = "python_full_version < '3.14'", specifier = ">=0.11.1" }]
+requires-dist = [
+    { name = "django", specifier = ">=5.2.8" },
+    { name = "uuid-utils", marker = "python_full_version < '3.14'", specifier = ">=0.11.1" },
+]
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "django", specifier = ">=5.2.8" },
     { name = "pytest", specifier = ">=9.0.1" },
     { name = "pytest-cov", specifier = ">=7.0.0" },
     { name = "pytest-django", specifier = ">=4.11.1" },
